@@ -53,17 +53,10 @@ While Drupal and WordPress both generate their own `robots.txt` file by default,
 ```none:title=robots.txt
 # Pantheon's documentation on robots.txt: https://docs.pantheon.io/bots-and-indexing/
 User-agent: *
-Disallow: /
+Disallow: /wp-admin/
+Allow: /wp-admin/admin-ajax.php
 
-User-agent: RavenCrawler
-User-agent: rogerbot
-User-agent: dotbot
-User-agent: SemrushBot
-User-agent: SiteAuditBot
-User-agent: SplitSignalBot
-User-agent: PowerMapper
-User-agent: Swiftbot
-Allow: /
+Sitemap:  https://dev-mr-seo-expert-man.pantheonsite.io/sitemap_index.xml
 ```
 
 Additionally, Pantheon's edge layer adds the [`X-Robots-Tag: noindex` HTTP header](https://developers.google.com/search/reference/robots_meta_tag) when serving requests from platform domains (e.g. `live-site-name.pantheonsite.io`). This instructs most bots/crawlers not to index the page and prevents it from being returned in search results.
